@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using Microsoft.CodeAnalysis;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Configuration.Json;
 
 namespace ProjectFinder
 {
@@ -13,6 +15,13 @@ namespace ProjectFinder
 
         static void Main(string[] args)
         {
+            var configuration = new ConfigurationBuilder()
+                .AddJsonFile(@"appsettings.json", optional: true)
+                .AddJsonFile(
+                    $"appsettings.{Environment.GetEnvironmentVariable("DOTNETCORE_ENVIRONMENT")}.json",optional: true)
+                .Build();
+            Global.Configuration = configuration.Get<Configuration>();
+
             var (currentWorkDirectory, projectName) = ParseArguments(args);
             // Get sln file from current/parent directories.
             // If multiple sln files is found, the nearest one is selected.
