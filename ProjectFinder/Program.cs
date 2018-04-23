@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using CommandLine;
 using Microsoft.CodeAnalysis;
+using ProjectFinder.Command;
 
 namespace ProjectFinder
 {
@@ -13,17 +15,29 @@ namespace ProjectFinder
 
         static void Main(string[] args)
         {
-            var (currentWorkDirectory, projectName) = ParseArguments(args);
-            // Get sln file from current/parent directories.
-            // If multiple sln files is found, the nearest one is selected.
-            var slnFileInfo = SolutionManager.GetSolutionFile(currentWorkDirectory);
-            // Get projects which belongs to the sln file.
-            var projects = SlnFileParser.ParseSolutionFile(slnFileInfo);
-            // Get target project path.
-            // Allows partial match.
-            // If multiple projects matched, an exception is throw.
-            var targetPath = GetTargetPath(projectName, projects);
-            Console.Write(targetPath);
+            // var (currentWorkDirectory, projectName) = ParseArguments(args);
+            // // Get sln file from current/parent directories.
+            // // If multiple sln files is found, the nearest one is selected.
+            // var slnFileInfo = SolutionManager.GetSolutionFile(currentWorkDirectory);
+            // // Get projects which belongs to the sln file.
+            // var projects = SlnFileParser.ParseSolutionFile(slnFileInfo);
+            // // Get target project path.
+            // // Allows partial match.
+            // // If multiple projects matched, an exception is throw.
+            // var targetPath = GetTargetPath(projectName, projects);
+            // Console.Write(targetPath);
+
+            Parser.Default.ParseArguments<MainOptions,AddOptions,DeleteOptions,ListOptions>(args)
+                .WithParsed<MainOptions>(opts => opts.Execte())
+                .WithParsed<AddOptions>(opts => opts.Execte())
+                .WithParsed<DeleteOptions>(opts => opts.Execte())
+                .WithParsed<ListOptions>(opts => opts.Execte())
+                .WithNotParsed(err => Environment.Exit(1));
+        }
+
+        private static void RunOptionsAndReturnExitCode(MainOptions opts)
+        {
+            throw new NotImplementedException();
         }
 
         public static (string currentWorkDirectory, string projName) ParseArguments(string[] args)
