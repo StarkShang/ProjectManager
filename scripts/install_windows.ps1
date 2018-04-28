@@ -24,6 +24,10 @@ if (Test-Path "$target") {
     Remove-Item -Path "$target" -Force -Recurse
 }
 
+if (-not (Test-Path "$Env:userprofile\self")) {
+    mkdir "$Env:userprofile\self"
+}
+
 if (-not (Test-Path "$target")) {
 	Move-Item -Path "$out" -Destination "$target" -Force
 }
@@ -37,7 +41,7 @@ if (Test-Path "$out") {
 ## Make alias
 ###############################################################################
 if (-not (Test-Path "$Env:userprofile\Documents\WindowsPowerShell")) {
-    New-Item -Path "$Env:userprofile\Documents\WindowsPowerShell"
+    mkdir "$Env:userprofile\Documents\WindowsPowerShell"
 }
 if (-not (Test-Path "$PROFILE")) {
     New-Item -Path "$PROFILE"

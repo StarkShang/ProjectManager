@@ -18,6 +18,7 @@ else
 fi
 
 # install to /usr/local/self/goto directory
+[ ! -d "/usr/local/self" ] && sudo mkdir "/usr/local/self"
 [ -d "$target" ] && sudo rm -rf "$target"
 [ ! -d "$target" ] && sudo mv -vf "$out" "$target"
 
