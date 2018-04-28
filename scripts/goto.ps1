@@ -1,4 +1,4 @@
-$exe = "/usr/local/self/goto/ProjectFinder.dll"
+$exe = "$Env:userprofile/self/goto/ProjectFinder.dll"
 
 $DEST = & dotnet "$exe" $args
 
