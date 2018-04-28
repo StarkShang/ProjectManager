@@ -10,6 +10,17 @@
                 "${workspaceFolder}/ProjectFinder/ProjectFinder.csproj"
             ],
             "problemMatcher": "$msCompile"
+        },{
+            "label": "release",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "--configuration",
+                "Release",
+                "${workspaceFolder}/ProjectFinder/ProjectFinder.csproj"
+            ],
+            "problemMatcher": "$msCompile"
         }
     ]
 }

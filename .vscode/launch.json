@@ -5,24 +5,42 @@
    "version": "0.2.0",
    "configurations": [
         {
-            "name": ".NET Core Launch (console)",
+            "name": "ProjectFinder (console)",
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
             // If you have changed target frameworks, make sure to update the program path.
             "program": "${workspaceFolder}/ProjectFinder/bin/Debug/netcoreapp2.0/ProjectFinder.dll",
-            "args": ["add"],
-            "cwd": "${workspaceFolder}/ProjectFinder",
+            "args": ["add", "-p", "~", "test"],
+            // "cwd": "${workspaceFolder}/ProjectFinder",
+            "cwd": "/Users/stark/Documents/Projects/Autolot/src/com.Autolot.Core.Test/Database",
             // For more information about the 'console' field, see https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger-launchjson.md#console-terminal-window
-            "console": "internalConsole",
+            "console": "externalTerminal",
             "stopAtEntry": false,
-            "internalConsoleOptions": "openOnSessionStart"
+            "internalConsoleOptions": "openOnSessionStart",
+            "env": {
+                // "DOTNETCORE_ENVIRONMENT": "test"
+            },
         },
         {
             "name": ".NET Core Attach",
             "type": "coreclr",
             "request": "attach",
             "processId": "${command:pickProcess}"
+        },
+        {
+            "name": "Unit Test",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/ProjectFinder.Test/bin/Debug/netcoreapp2.0/ProjectFinder.Test.dll",
+            "cwd": "/Users/stark/Documents/Projects/Autolot/src/com.Autolot.Core.Test/Database",
+            "console": "integratedTerminal",
+            "stopAtEntry": false,
+            "internalConsoleOptions": "openOnSessionStart",
+            "env": {
+                "DOTNETCORE_ENVIRONMENT": "Test"
+            }
         }
     ,]
 }

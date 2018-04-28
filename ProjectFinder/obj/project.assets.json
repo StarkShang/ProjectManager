@@ -2,7 +2,30 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v2.0": {
-<<<<<<< HEAD
+      "CommandLineParser/2.2.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Collections": "4.0.11-rc2-24027",
+          "System.Console": "4.0.0-rc2-24027",
+          "System.Diagnostics.Debug": "4.0.11-rc2-24027",
+          "System.Globalization": "4.0.11-rc2-24027",
+          "System.IO": "4.1.0-rc2-24027",
+          "System.Linq": "4.1.0-rc2-24027",
+          "System.Linq.Expressions": "4.0.11-rc2-24027",
+          "System.Reflection": "4.1.0-rc2-24027",
+          "System.Reflection.Extensions": "4.0.1-rc2-24027",
+          "System.Reflection.TypeExtensions": "4.1.0-rc2-24027",
+          "System.Resources.ResourceManager": "4.0.1-rc2-24027",
+          "System.Runtime": "4.1.0-rc2-24027",
+          "System.Runtime.Extensions": "4.1.0-rc2-24027"
+        },
+        "compile": {
+          "lib/netstandard1.5/CommandLine.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.5/CommandLine.dll": {}
+        }
+      },
       "Microsoft.Extensions.Configuration/2.0.1": {
         "type": "package",
         "dependencies": {
@@ -161,30 +184,6 @@
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.Extensions.Primitives.dll": {}
-=======
-      "CommandLineParser/2.2.1": {
-        "type": "package",
-        "dependencies": {
-          "System.Collections": "4.0.11-rc2-24027",
-          "System.Console": "4.0.0-rc2-24027",
-          "System.Diagnostics.Debug": "4.0.11-rc2-24027",
-          "System.Globalization": "4.0.11-rc2-24027",
-          "System.IO": "4.1.0-rc2-24027",
-          "System.Linq": "4.1.0-rc2-24027",
-          "System.Linq.Expressions": "4.0.11-rc2-24027",
-          "System.Reflection": "4.1.0-rc2-24027",
-          "System.Reflection.Extensions": "4.0.1-rc2-24027",
-          "System.Reflection.TypeExtensions": "4.1.0-rc2-24027",
-          "System.Resources.ResourceManager": "4.0.1-rc2-24027",
-          "System.Runtime": "4.1.0-rc2-24027",
-          "System.Runtime.Extensions": "4.1.0-rc2-24027"
-        },
-        "compile": {
-          "lib/netstandard1.5/CommandLine.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard1.5/CommandLine.dll": {}
->>>>>>> fea/clap
         }
       },
       "Microsoft.NETCore.App/2.0.0": {
@@ -391,24 +390,6 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
-<<<<<<< HEAD
-      "System.Runtime.CompilerServices.Unsafe/4.4.0": {
-        "type": "package",
-        "compile": {
-          "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
-        }
-      },
-      "System.Security.Cryptography.Xml/4.4.0": {
-        "type": "package",
-        "compile": {
-          "ref/netstandard2.0/System.Security.Cryptography.Xml.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/System.Security.Cryptography.Xml.dll": {}
-=======
       "System.Collections/4.0.11-rc2-24027": {
         "type": "package",
         "dependencies": {
@@ -416,6 +397,18 @@
         },
         "compile": {
           "ref/netstandard1.3/System.Collections.dll": {}
+        }
+      },
+      "System.CommandLine/0.1.0-preview2-180425-1": {
+        "type": "package",
+        "dependencies": {
+          "NETStandard.Library": "1.6.1"
+        },
+        "compile": {
+          "lib/netstandard1.5/System.CommandLine.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.5/System.CommandLine.dll": {}
         }
       },
       "System.Console/4.0.0-rc2-24027": {
@@ -623,6 +616,15 @@
           "ref/netstandard1.5/System.Runtime.dll": {}
         }
       },
+      "System.Runtime.CompilerServices.Unsafe/4.4.0": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
+        }
+      },
       "System.Runtime.Extensions/4.1.0-rc2-24027": {
         "type": "package",
         "dependencies": {
@@ -630,6 +632,15 @@
         },
         "compile": {
           "ref/netstandard1.5/System.Runtime.Extensions.dll": {}
+        }
+      },
+      "System.Security.Cryptography.Xml/4.4.0": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.0/System.Security.Cryptography.Xml.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Security.Cryptography.Xml.dll": {}
         }
       },
       "System.Text.Encoding/4.0.11-rc2-24027": {
@@ -661,13 +672,27 @@
         },
         "compile": {
           "ref/netstandard1.3/System.Threading.Tasks.dll": {}
->>>>>>> fea/clap
         }
       }
     }
   },
   "libraries": {
-<<<<<<< HEAD
+    "CommandLineParser/2.2.1": {
+      "sha512": "s+cVeOzKcoPu0IWda5DPd0b9K7vfKqo17aOOrj5zsUnE5n3Bts8vutn5R3KYqBlnbuqQEXzJT7IhAkRKMXouzw==",
+      "type": "package",
+      "path": "commandlineparser/2.2.1",
+      "files": [
+        "commandlineparser.2.2.1.nupkg.sha512",
+        "commandlineparser.nuspec",
+        "lib/net40/CommandLine.XML",
+        "lib/net40/CommandLine.dll",
+        "lib/net45/CommandLine.XML",
+        "lib/net45/CommandLine.dll",
+        "lib/netstandard1.5/CommandLine.dll",
+        "lib/netstandard1.5/CommandLine.xml",
+        "readme.md"
+      ]
+    },
     "Microsoft.Extensions.Configuration/2.0.1": {
       "sha512": "d9fFoEYRaBccu/Z2B2BZCil/lEnmoVQ8YiY1dGViERh0qWjixgR9y/M7EGaoTrAunnmvAmfwxuij/gCq6WvL1w==",
       "type": "package",
@@ -809,22 +834,6 @@
         "lib/netstandard2.0/Microsoft.Extensions.Primitives.xml",
         "microsoft.extensions.primitives.2.0.0.nupkg.sha512",
         "microsoft.extensions.primitives.nuspec"
-=======
-    "CommandLineParser/2.2.1": {
-      "sha512": "s+cVeOzKcoPu0IWda5DPd0b9K7vfKqo17aOOrj5zsUnE5n3Bts8vutn5R3KYqBlnbuqQEXzJT7IhAkRKMXouzw==",
-      "type": "package",
-      "path": "commandlineparser/2.2.1",
-      "files": [
-        "commandlineparser.2.2.1.nupkg.sha512",
-        "commandlineparser.nuspec",
-        "lib/net40/CommandLine.XML",
-        "lib/net40/CommandLine.dll",
-        "lib/net45/CommandLine.XML",
-        "lib/net45/CommandLine.dll",
-        "lib/netstandard1.5/CommandLine.dll",
-        "lib/netstandard1.5/CommandLine.xml",
-        "readme.md"
->>>>>>> fea/clap
       ]
     },
     "Microsoft.NETCore.App/2.0.0": {
@@ -1312,46 +1321,6 @@
         "newtonsoft.json.nuspec"
       ]
     },
-<<<<<<< HEAD
-    "System.Runtime.CompilerServices.Unsafe/4.4.0": {
-      "sha512": "9dLLuBxr5GNmOfl2jSMcsHuteEg32BEfUotmmUkmZjpR3RpVHE8YQwt0ow3p6prwA1ME8WqDVZqrr8z6H8G+Kw==",
-      "type": "package",
-      "path": "system.runtime.compilerservices.unsafe/4.4.0",
-      "files": [
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "lib/netstandard1.0/System.Runtime.CompilerServices.Unsafe.dll",
-        "lib/netstandard1.0/System.Runtime.CompilerServices.Unsafe.xml",
-        "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll",
-        "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.xml",
-        "ref/netstandard1.0/System.Runtime.CompilerServices.Unsafe.dll",
-        "ref/netstandard1.0/System.Runtime.CompilerServices.Unsafe.xml",
-        "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll",
-        "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.xml",
-        "system.runtime.compilerservices.unsafe.4.4.0.nupkg.sha512",
-        "system.runtime.compilerservices.unsafe.nuspec",
-        "useSharedDesignerContext.txt",
-        "version.txt"
-      ]
-    },
-    "System.Security.Cryptography.Xml/4.4.0": {
-      "sha512": "1Xubvo4i+K+DO6YzVh6vBKmCl5xx/cAoiJEze6VQ+XwVQU25KQC9pPrmniz2EbbJnmoQ5Rm2FFjHsfQAi0Rs+Q==",
-      "type": "package",
-      "path": "system.security.cryptography.xml/4.4.0",
-      "files": [
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "lib/net461/System.Security.Cryptography.Xml.dll",
-        "lib/netstandard2.0/System.Security.Cryptography.Xml.dll",
-        "ref/net461/System.Security.Cryptography.Xml.dll",
-        "ref/net461/System.Security.Cryptography.Xml.xml",
-        "ref/netstandard2.0/System.Security.Cryptography.Xml.dll",
-        "ref/netstandard2.0/System.Security.Cryptography.Xml.xml",
-        "system.security.cryptography.xml.4.4.0.nupkg.sha512",
-        "system.security.cryptography.xml.nuspec",
-        "useSharedDesignerContext.txt",
-        "version.txt"
-=======
     "System.Collections/4.0.11-rc2-24027": {
       "sha512": "wi4oT2B06Ev7vDPeJki7HVJ3qPYJIilzf+p81JuNaBD9L2wi9Y2L5BsQ6ToncW+lYZafuMea/hiK1xX1Ge1VWQ==",
       "type": "package",
@@ -1416,6 +1385,16 @@
         "ref/xamarinwatchos10/_._",
         "system.collections.4.0.11-rc2-24027.nupkg.sha512",
         "system.collections.nuspec"
+      ]
+    },
+    "System.CommandLine/0.1.0-preview2-180425-1": {
+      "sha512": "z7EWU79AtxQer/dEAOEe/VUB/1B5f+rxhWYD8zV2hogqQKhVcRb+bf1usr3dbJHzWhDno69t/ijfZewQ4N54SQ==",
+      "type": "package",
+      "path": "system.commandline/0.1.0-preview2-180425-1",
+      "files": [
+        "lib/netstandard1.5/System.CommandLine.dll",
+        "system.commandline.0.1.0-preview2-180425-1.nupkg.sha512",
+        "system.commandline.nuspec"
       ]
     },
     "System.Console/4.0.0-rc2-24027": {
@@ -2350,6 +2329,27 @@
         "system.runtime.nuspec"
       ]
     },
+    "System.Runtime.CompilerServices.Unsafe/4.4.0": {
+      "sha512": "9dLLuBxr5GNmOfl2jSMcsHuteEg32BEfUotmmUkmZjpR3RpVHE8YQwt0ow3p6prwA1ME8WqDVZqrr8z6H8G+Kw==",
+      "type": "package",
+      "path": "system.runtime.compilerservices.unsafe/4.4.0",
+      "files": [
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/netstandard1.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "lib/netstandard1.0/System.Runtime.CompilerServices.Unsafe.xml",
+        "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.xml",
+        "ref/netstandard1.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "ref/netstandard1.0/System.Runtime.CompilerServices.Unsafe.xml",
+        "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.xml",
+        "system.runtime.compilerservices.unsafe.4.4.0.nupkg.sha512",
+        "system.runtime.compilerservices.unsafe.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
     "System.Runtime.Extensions/4.1.0-rc2-24027": {
       "sha512": "rHmAgtQY8XlVd4tB/5ta8IzxAL9gpUlkTYQgUXDjdHux2MFmDSJv4vgm/atmwbKZcd0TnzjD2SYpnkWSqDWgFg==",
       "type": "package",
@@ -2427,6 +2427,25 @@
         "ref/xamarinwatchos10/_._",
         "system.runtime.extensions.4.1.0-rc2-24027.nupkg.sha512",
         "system.runtime.extensions.nuspec"
+      ]
+    },
+    "System.Security.Cryptography.Xml/4.4.0": {
+      "sha512": "1Xubvo4i+K+DO6YzVh6vBKmCl5xx/cAoiJEze6VQ+XwVQU25KQC9pPrmniz2EbbJnmoQ5Rm2FFjHsfQAi0Rs+Q==",
+      "type": "package",
+      "path": "system.security.cryptography.xml/4.4.0",
+      "files": [
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/System.Security.Cryptography.Xml.dll",
+        "lib/netstandard2.0/System.Security.Cryptography.Xml.dll",
+        "ref/net461/System.Security.Cryptography.Xml.dll",
+        "ref/net461/System.Security.Cryptography.Xml.xml",
+        "ref/netstandard2.0/System.Security.Cryptography.Xml.dll",
+        "ref/netstandard2.0/System.Security.Cryptography.Xml.xml",
+        "system.security.cryptography.xml.4.4.0.nupkg.sha512",
+        "system.security.cryptography.xml.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
       ]
     },
     "System.Text.Encoding/4.0.11-rc2-24027": {
@@ -2628,13 +2647,12 @@
         "ref/xamarinwatchos10/_._",
         "system.threading.tasks.4.0.11-rc2-24027.nupkg.sha512",
         "system.threading.tasks.nuspec"
->>>>>>> fea/clap
       ]
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.0": [
-<<<<<<< HEAD
+      "CommandLineParser >= 2.2.1",
       "Microsoft.Extensions.Configuration >= 2.0.1",
       "Microsoft.Extensions.Configuration.Binder >= 2.0.1",
       "Microsoft.Extensions.Configuration.CommandLine >= 2.0.1",
@@ -2642,11 +2660,9 @@
       "Microsoft.Extensions.Configuration.Ini >= 2.0.1",
       "Microsoft.Extensions.Configuration.Json >= 2.0.1",
       "Microsoft.Extensions.Configuration.Xml >= 2.0.1",
-=======
-      "CommandLineParser >= 2.2.1",
->>>>>>> fea/clap
       "Microsoft.NETCore.App >= 2.0.0",
-      "Newtonsoft.Json >= 11.0.2"
+      "Newtonsoft.Json >= 11.0.2",
+      "System.CommandLine >= 0.1.0-preview2-180425-1"
     ]
   },
   "packageFolders": {
@@ -2688,7 +2704,10 @@
     "frameworks": {
       "netcoreapp2.0": {
         "dependencies": {
-<<<<<<< HEAD
+          "CommandLineParser": {
+            "target": "Package",
+            "version": "[2.2.1, )"
+          },
           "Microsoft.Extensions.Configuration": {
             "target": "Package",
             "version": "[2.0.1, )"
@@ -2716,11 +2735,6 @@
           "Microsoft.Extensions.Configuration.Xml": {
             "target": "Package",
             "version": "[2.0.1, )"
-=======
-          "CommandLineParser": {
-            "target": "Package",
-            "version": "[2.2.1, )"
->>>>>>> fea/clap
           },
           "Microsoft.NETCore.App": {
             "target": "Package",
@@ -2730,6 +2744,10 @@
           "Newtonsoft.Json": {
             "target": "Package",
             "version": "[11.0.2, )"
+          },
+          "System.CommandLine": {
+            "target": "Package",
+            "version": "[0.1.0-preview2-180425-1, )"
           }
         },
         "imports": [

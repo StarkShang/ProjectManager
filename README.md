@@ -41,7 +41,6 @@ Delete a record in saved list by alias. The whole alias should be given.
 
 List all save directories.
 
-
 ## To do list
 
 1. 修改路径名，路径全小写，符合 Linux 规范。

@@ -4,19 +4,18 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
+using ProjectFinder.Model;
 
-namespace ProjectFinder
+namespace ProjectFinder.Utilities
 {
-    public class SlnFileParser
+    public class SlnParser
     {
-        private readonly ProjectFile slnFileInfo;
-
         public Dictionary<string, string> ParseSolutionFile()
         {
             return ParseSolutionFile(slnFileInfo);
         }
 
-        public static Dictionary<string, string> ParseSolutionFile(ProjectFile slnFile)
+        public static Dictionary<string, string> ParseSolutionFile(FileCacheRecord slnFile)
         {
             if (slnFile == null)
             {
@@ -25,7 +24,7 @@ namespace ProjectFinder
 
             var projects = new Dictionary<string, string> { { "root", slnFile.Path } };
 
-            var content = File.ReadAllText(slnFile.FullName);
+            var content = File.ReadAllText(slnFile.FilePath);
             var query = from match in Regex.Matches(content, @"(?<=Project.*=\s).*(?=,.*?\r?\nEndProject)", RegexOptions.IgnoreCase)
                         let m = match.Value.Split(',')[1]
                         select m.Replace("\\", "/")
@@ -39,7 +38,8 @@ namespace ProjectFinder
             return projects;
         }
 
-        public SlnFileParser(ProjectFile slnFileInfo)
+        private readonly FileCacheRecord slnFileInfo;
+        public SlnParser(FileCacheRecord slnFileInfo)
         {
             this.slnFileInfo = slnFileInfo;
         }

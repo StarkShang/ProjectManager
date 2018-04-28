@@ -1,107 +1,28 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using CommandLine;
-using Microsoft.CodeAnalysis;
-<<<<<<< HEAD
+using System.CommandLine;
 using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Configuration.Json;
-=======
 using ProjectFinder.Command;
->>>>>>> fea/clap
+using ProjectFinder.Manager;
 
 namespace ProjectFinder
 {
-    class Program
+    public class Program
     {
         const string SolutionFileSuffix = "sln";
         const string RootName = "root";
 
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             var configuration = new ConfigurationBuilder()
                 .AddJsonFile(@"appsettings.json", optional: true)
                 .AddJsonFile(
-                    $"appsettings.{Environment.GetEnvironmentVariable("DOTNETCORE_ENVIRONMENT")}.json",optional: true)
+                    $"{Environment.GetEnvironmentVariable("DOTNETCORE_ENVIRONMENT")}.appsettings.json", optional: true)
                 .Build();
             Global.Configuration = configuration.Get<Configuration>();
 
-            var (currentWorkDirectory, projectName) = ParseArguments(args);
-            // Get sln file from current/parent directories.
-            // If multiple sln files is found, the nearest one is selected.
-            var slnFileInfo = SolutionManager.GetSolutionFile(currentWorkDirectory);
-            // Get projects which belongs to the sln file.
-            var projects = SlnFileParser.ParseSolutionFile(slnFileInfo);
-            // Get target project path.
-            // Allows partial match.
-            // If multiple projects matched, an exception is throw.
-            var targetPath = GetTargetPath(projectName, projects);
-            Console.Write(targetPath);
-=======
-            // var (currentWorkDirectory, projectName) = ParseArguments(args);
-            // // Get sln file from current/parent directories.
-            // // If multiple sln files is found, the nearest one is selected.
-            // var slnFileInfo = SolutionManager.GetSolutionFile(currentWorkDirectory);
-            // // Get projects which belongs to the sln file.
-            // var projects = SlnFileParser.ParseSolutionFile(slnFileInfo);
-            // // Get target project path.
-            // // Allows partial match.
-            // // If multiple projects matched, an exception is throw.
-            // var targetPath = GetTargetPath(projectName, projects);
-            // Console.Write(targetPath);
+            // CommandManager.ExecuteCommand(args);
+            new MainCommand().Execute(args);
 
-            Parser.Default.ParseArguments<MainOptions,AddOptions,DeleteOptions,ListOptions>(args)
-                .WithParsed<MainOptions>(opts => opts.Execte())
-                .WithParsed<AddOptions>(opts => opts.Execte())
-                .WithParsed<DeleteOptions>(opts => opts.Execte())
-                .WithParsed<ListOptions>(opts => opts.Execte())
-                .WithNotParsed(err => Environment.Exit(1));
-        }
-
-        private static void RunOptionsAndReturnExitCode(MainOptions opts)
-        {
-            throw new NotImplementedException();
->>>>>>> fea/clap
-        }
-
-        public static (string currentWorkDirectory, string projName) ParseArguments(string[] args)
-        {
-            if (args.Length < 1) FailedExit("The current work directory is required!");
-            if (!Directory.Exists(args[0])) FailedExit("The current work directory isn't exists!");
-            return (args[0], args.Length > 1 ? args[1].ToLowerInvariant() : null);
-        }
-
-        public static string GetTargetPath(string projectName, Dictionary<string,string> projects)
-        {
-            // Did not specific the project name.
-            if (projectName == null) return projects["root"];
-            // else
-            var query = from project in projects
-                        where project.Key.Contains(projectName ?? RootName)
-                        select project;
-            query.Distinct();
-            switch (query.Count())
-            {
-                case 0:
-                    FailedExit("Error: No such project!");
-                    return null;
-                case 1: return query.First().Value;
-                default:
-                    var project = query.Where(x => x.Key == projectName);
-                    if (project.Count() == 1) return project.First().Value;
-                    var matchedProject = 
-                        string.Join('\n',
-                            query.Select(
-                                x => $"Project {x.Key}: {x.Value}"));
-                    FailedExit($"Error: Multiple projects are matched!\n{matchedProject}");
-                    return null;
-            }
-        }
-
-        public static void FailedExit(string message)
-        {
-            Console.WriteLine(message);
             Environment.Exit(1);
         }
     }

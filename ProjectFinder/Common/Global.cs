@@ -2,6 +2,6 @@ namespace ProjectFinder
 {
     public static class Global
     {
-        internal static Configuration Configuration { get; set; }=null;
+        public static Configuration Configuration { get; set; }
     }
 }

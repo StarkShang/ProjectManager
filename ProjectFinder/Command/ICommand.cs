@@ -2,6 +2,7 @@ namespace ProjectFinder.Command
 {
     public interface ICommand
     {
-         void Execte();
+        void ParseArguments(string[] args);
+        void Execte(string[] args);
     }
 }
