@@ -2666,24 +2666,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\stark\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "/Users/stark/.nuget/packages/": {},
+    "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Coding\\Projects\\ProjectFinder\\ProjectFinder\\ProjectFinder.csproj",
+      "projectUniqueName": "/Users/stark/Documents/Projects/ProjectFinder/ProjectFinder/ProjectFinder.csproj",
       "projectName": "ProjectFinder",
-      "projectPath": "E:\\Coding\\Projects\\ProjectFinder\\ProjectFinder\\ProjectFinder.csproj",
-      "packagesPath": "C:\\Users\\stark\\.nuget\\packages\\",
-      "outputPath": "E:\\Coding\\Projects\\ProjectFinder\\ProjectFinder\\obj\\",
+      "projectPath": "/Users/stark/Documents/Projects/ProjectFinder/ProjectFinder/ProjectFinder.csproj",
+      "packagesPath": "/Users/stark/.nuget/packages/",
+      "outputPath": "/Users/stark/Documents/Projects/ProjectFinder/ProjectFinder/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "E:\\Coding\\Projects\\ProjectFinder\\ProjectFinder\\NuGet.Config",
-        "C:\\Users\\stark\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "/Users/stark/Documents/Projects/ProjectFinder/ProjectFinder/NuGet.Config",
+        "/Users/stark/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.0"

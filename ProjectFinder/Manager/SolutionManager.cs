@@ -50,7 +50,7 @@ namespace ProjectFinder.Manager
 
                     var selection = InteractiveManager
                         .QueryUserForSelection(query,
-                            x => $"alias: {x.Key}, path{x.Value}");
+                            x => $"alias: {x.Key}, path: {x.Value}");
                     return selection == 0 ? null : query.Values.ElementAt(selection-1);
             }
         }

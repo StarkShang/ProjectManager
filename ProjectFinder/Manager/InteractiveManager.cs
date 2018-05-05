@@ -15,7 +15,7 @@ namespace ProjectFinder.Manager
             errorInfo.AppendLine($"  0 - exit\n");
             errorInfo.Append("Please input index to continue: ");
 
-            Console.Write(errorInfo);
+            Console.Error.Write(errorInfo);
             return ReadUserInput(index - 1);
         }
 
@@ -29,7 +29,7 @@ namespace ProjectFinder.Manager
             }
             catch 
             {
-                System.Console.Write("Invalid input. Please try again: ");
+                Console.Error.Write("Invalid input. Please try again: ");
                 return ReadUserInput(upperBound);
             }
         }

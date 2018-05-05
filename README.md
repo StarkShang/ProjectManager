@@ -43,5 +43,12 @@ List all save directories.
 
 ## To do list
 
-1. 修改路径名，路径全小写，符合 Linux 规范。
-2. install.sh 增加 --self-contained 参数，决定是否使用 Native 编译
+### Features
+
+- [x] 修改路径名，路径全小写，符合 Linux 规范
+- [x] install.sh 增加 --self-contained 参数，决定是否使用 Native 编译
+- [ ] 重新安装时，询问是否覆盖配置文件
+
+### Bugs
+
+- [ ] 在项目模式下 cache.file.json 文件不是保存在安装目录，而是在工作目录

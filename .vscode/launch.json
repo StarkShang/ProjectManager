@@ -11,7 +11,7 @@
             "preLaunchTask": "build",
             // If you have changed target frameworks, make sure to update the program path.
             "program": "${workspaceFolder}/ProjectFinder/bin/Debug/netcoreapp2.0/ProjectFinder.dll",
-            "args": ["add", "-p", "~", "test"],
+            "args": ["core"],
             // "cwd": "${workspaceFolder}/ProjectFinder",
             "cwd": "/Users/stark/Documents/Projects/Autolot/src/com.Autolot.Core.Test/Database",
             // For more information about the 'console' field, see https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger-launchjson.md#console-terminal-window
